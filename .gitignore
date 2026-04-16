@@ -1,0 +1,23 @@
+# Backend
+api/writable/uploads/
+api/writable/logs/
+api/writable/cache/
+api/writable/session/
+api/.env
+api/vendor/
+
+# Frontend
+client/node_modules/
+client/dist/
+client/.env.local
+client/.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

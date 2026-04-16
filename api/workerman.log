@@ -1,0 +1,524 @@
+2026-04-13 04:59:30 pid:26513 Workerman[spark] start in DEBUG mode
+2026-04-13 05:57:05 pid:26514 SQLite3Exception: attempt to write a readonly database in /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php:163
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `co...')
+#1 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `co...')
+#2 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 /data/data/com.termux/files/home/memosd-backend/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#5 /data/data/com.termux/files/home/memosd-backend/system/BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#6 /data/data/com.termux/files/home/memosd-backend/system/Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#7 /data/data/com.termux/files/home/memosd-backend/app/Models/ConversationModel.php(22): CodeIgniter\Model->insert(Array)
+#8 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(79): App\Models\ConversationModel->getOrCreate(3, 49)
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():33}(Object(Workerman\Connection\TcpConnection), '{"type":"messag...')
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #247)
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#12 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#13 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#14 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#15 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(149): Workerman\Worker::runAll()
+#16 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#17 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#18 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#19 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#20 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#21 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: attempt to write a readonly database in /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php:174
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `co...')
+#1 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#2 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#3 /data/data/com.termux/files/home/memosd-backend/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#4 /data/data/com.termux/files/home/memosd-backend/system/BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#5 /data/data/com.termux/files/home/memosd-backend/system/Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#6 /data/data/com.termux/files/home/memosd-backend/app/Models/ConversationModel.php(22): CodeIgniter\Model->insert(Array)
+#7 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(79): App\Models\ConversationModel->getOrCreate(3, 49)
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():33}(Object(Workerman\Connection\TcpConnection), '{"type":"messag...')
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #247)
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#12 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#13 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#14 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(149): Workerman\Worker::runAll()
+#15 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#16 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#17 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#18 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#19 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#20 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: attempt to write a readonly database in /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php:865
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#1 /data/data/com.termux/files/home/memosd-backend/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#2 /data/data/com.termux/files/home/memosd-backend/system/BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#3 /data/data/com.termux/files/home/memosd-backend/system/Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#4 /data/data/com.termux/files/home/memosd-backend/app/Models/ConversationModel.php(22): CodeIgniter\Model->insert(Array)
+#5 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(79): App\Models\ConversationModel->getOrCreate(3, 49)
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():33}(Object(Workerman\Connection\TcpConnection), '{"type":"messag...')
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #247)
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#12 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(149): Workerman\Worker::runAll()
+#13 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#14 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#15 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#16 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#17 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#18 {main}
+2026-04-13 05:57:05 pid:26513 worker[none:26514] exit with status 64000
+2026-04-13 08:24:22 pid:23334 SQLite3Exception: attempt to write a readonly database in /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php:163
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `co...')
+#1 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `co...')
+#2 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 /data/data/com.termux/files/home/memosd-backend/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#5 /data/data/com.termux/files/home/memosd-backend/system/BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#6 /data/data/com.termux/files/home/memosd-backend/system/Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#7 /data/data/com.termux/files/home/memosd-backend/app/Models/ConversationModel.php(22): CodeIgniter\Model->insert(Array)
+#8 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(79): App\Models\ConversationModel->getOrCreate(91, 82)
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():33}(Object(Workerman\Connection\TcpConnection), '{"type":"messag...')
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #232)
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#12 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#13 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#14 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#15 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#16 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#17 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(149): Workerman\Worker::runAll()
+#18 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#19 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#20 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#21 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#22 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#23 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: attempt to write a readonly database in /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php:174
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `co...')
+#1 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#2 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#3 /data/data/com.termux/files/home/memosd-backend/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#4 /data/data/com.termux/files/home/memosd-backend/system/BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#5 /data/data/com.termux/files/home/memosd-backend/system/Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#6 /data/data/com.termux/files/home/memosd-backend/app/Models/ConversationModel.php(22): CodeIgniter\Model->insert(Array)
+#7 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(79): App\Models\ConversationModel->getOrCreate(91, 82)
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():33}(Object(Workerman\Connection\TcpConnection), '{"type":"messag...')
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #232)
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#12 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#13 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#14 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#15 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#16 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(149): Workerman\Worker::runAll()
+#17 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#18 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#19 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#20 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#21 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#22 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: attempt to write a readonly database in /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php:865
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#1 /data/data/com.termux/files/home/memosd-backend/system/Model.php(355): CodeIgniter\Database\BaseBuilder->insert()
+#2 /data/data/com.termux/files/home/memosd-backend/system/BaseModel.php(899): CodeIgniter\Model->doInsert(Array)
+#3 /data/data/com.termux/files/home/memosd-backend/system/Model.php(668): CodeIgniter\BaseModel->insert(Array, true)
+#4 /data/data/com.termux/files/home/memosd-backend/app/Models/ConversationModel.php(22): CodeIgniter\Model->insert(Array)
+#5 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(79): App\Models\ConversationModel->getOrCreate(91, 82)
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():33}(Object(Workerman\Connection\TcpConnection), '{"type":"messag...')
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #232)
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#12 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#13 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#14 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(149): Workerman\Worker::runAll()
+#15 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#16 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#17 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#18 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#19 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#20 {main}
+2026-04-13 08:24:22 pid:26513 worker[none:23334] exit with status 64000
+2026-04-13 09:22:19 pid:7324 Workerman[spark] start in DEBUG mode
+2026-04-13 09:22:19 pid:7324 Workerman[spark] already running
+2026-04-13 09:36:36 pid:26513 Workerman[spark] received signal SIGINT
+2026-04-13 09:36:36 pid:26513 Workerman[spark] stopping
+2026-04-13 09:36:36 pid:26513 Workerman[spark] has been stopped
+2026-04-13 09:36:38 pid:13896 Workerman[spark] start in DEBUG mode
+2026-04-13 09:36:39 pid:13899 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#8 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#9 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#10 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#11 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+2026-04-13 09:36:39 pid:13896 worker[MemoSD WebSocket:13899] exit with status 64000
+2026-04-13 09:36:40 pid:13969 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:40 pid:13896 worker[MemoSD WebSocket:13969] exit with status 64000
+2026-04-13 09:36:41 pid:13995 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:41 pid:13896 worker[MemoSD WebSocket:13995] exit with status 64000
+2026-04-13 09:36:42 pid:14022 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:42 pid:13896 worker[MemoSD WebSocket:14022] exit with status 64000
+2026-04-13 09:36:43 pid:14023 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:43 pid:13896 worker[MemoSD WebSocket:14023] exit with status 64000
+2026-04-13 09:36:44 pid:14026 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:44 pid:13896 worker[MemoSD WebSocket:14026] exit with status 64000
+2026-04-13 09:36:45 pid:14028 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:45 pid:13896 worker[MemoSD WebSocket:14028] exit with status 64000
+2026-04-13 09:36:46 pid:14030 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:46 pid:13896 worker[MemoSD WebSocket:14030] exit with status 64000
+2026-04-13 09:36:47 pid:14034 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:47 pid:13896 worker[MemoSD WebSocket:14034] exit with status 64000
+2026-04-13 09:36:48 pid:14042 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:48 pid:13896 worker[MemoSD WebSocket:14042] exit with status 64000
+2026-04-13 09:36:50 pid:14063 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:50 pid:13896 worker[MemoSD WebSocket:14063] exit with status 64000
+2026-04-13 09:36:51 pid:14067 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:51 pid:13896 worker[MemoSD WebSocket:14067] exit with status 64000
+2026-04-13 09:36:51 pid:14077 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:51 pid:13896 Workerman[spark] received signal SIGINT
+2026-04-13 09:36:51 pid:13896 Workerman[spark] stopping
+2026-04-13 09:36:51 pid:13896 worker[MemoSD WebSocket:14077] exit with status 64000
+2026-04-13 09:36:51 pid:13896 Workerman[spark] has been stopped
+2026-04-13 09:36:52 pid:14084 Workerman[spark] start in DEBUG mode
+2026-04-13 09:36:53 pid:14085 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#8 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#9 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#10 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#11 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+2026-04-13 09:36:53 pid:14084 worker[MemoSD WebSocket:14085] exit with status 64000
+2026-04-13 09:36:54 pid:14086 Error: Class "Workerman\Lib\Timer" not found in /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php:43
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2641): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():42}(Object(Workerman\Worker))
+#1 [internal function]: Workerman\Worker->{closure:Workerman\Worker::run():2639}()
+#2 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(2659): Fiber->start()
+#3 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1756): Workerman\Worker->run()
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1903): Workerman\Worker::forkWorkers()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1838): Workerman\Worker::monitorWorkersForLinux()
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(605): Workerman\Worker::monitorWorkers()
+#9 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(112): Workerman\Worker::runAll()
+#10 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+2026-04-13 09:36:54 pid:14084 Workerman[spark] received signal SIGINT
+2026-04-13 09:36:54 pid:14084 Workerman[spark] stopping
+2026-04-13 09:36:54 pid:14084 worker[MemoSD WebSocket:14086] exit with status 64000
+2026-04-13 09:36:54 pid:14084 Workerman[spark] has been stopped
+2026-04-13 09:40:13 pid:16295 Workerman[spark] start in DEBUG mode
+2026-04-13 10:36:54 pid:16295 Workerman[spark] received signal SIGINT
+2026-04-13 10:36:54 pid:16295 Workerman[spark] stopping
+2026-04-13 10:36:55 pid:16295 Workerman[spark] has been stopped
+2026-04-13 10:36:56 pid:9027 Workerman[spark] start in DEBUG mode
+2026-04-15 09:06:32 pid:23499 Workerman[spark] start in DEBUG mode
+2026-04-15 09:06:32 pid:23499 Master pid:9027 is not alive
+2026-04-15 09:24:16 pid:23500 SQLite3Exception: database is locked in /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php:163
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php(163): SQLite3->exec('UPDATE `user_st...')
+#1 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('UPDATE `user_st...')
+#2 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user_st...')
+#3 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `user_st...', Array, false)
+#4 /data/data/com.termux/files/home/memosd-backend/app/Models/UserStatusModel.php(19): CodeIgniter\Database\BaseBuilder->update()
+#5 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(125): App\Models\UserStatusModel->setOnline(101)
+#6 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(69): App\Commands\WorkermanServer->handleAuth(Object(Workerman\Connection\TcpConnection), Array)
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():56}(Object(Workerman\Connection\TcpConnection), '{"type":"auth",...')
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #239)
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#12 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#13 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(110): Workerman\Worker::runAll()
+#14 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#15 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#16 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#17 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#18 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#19 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: database is locked in /data/data/com.termux/files/home/memosd-backend/system/Database/SQLite3/Connection.php:174
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('UPDATE `user_st...')
+#1 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user_st...')
+#2 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `user_st...', Array, false)
+#3 /data/data/com.termux/files/home/memosd-backend/app/Models/UserStatusModel.php(19): CodeIgniter\Database\BaseBuilder->update()
+#4 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(125): App\Models\UserStatusModel->setOnline(101)
+#5 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(69): App\Commands\WorkermanServer->handleAuth(Object(Workerman\Connection\TcpConnection), Array)
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():56}(Object(Workerman\Connection\TcpConnection), '{"type":"auth",...')
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #239)
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#10 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#11 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#12 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(110): Workerman\Worker::runAll()
+#13 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#14 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#15 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#16 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#17 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#18 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: database is locked in /data/data/com.termux/files/home/memosd-backend/system/Database/BaseConnection.php:865
+Stack trace:
+#0 /data/data/com.termux/files/home/memosd-backend/system/Database/BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `user_st...', Array, false)
+#1 /data/data/com.termux/files/home/memosd-backend/app/Models/UserStatusModel.php(19): CodeIgniter\Database\BaseBuilder->update()
+#2 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(125): App\Models\UserStatusModel->setOnline(101)
+#3 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(69): App\Commands\WorkermanServer->handleAuth(Object(Workerman\Connection\TcpConnection), Array)
+#4 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Connection/TcpConnection.php(792): App\Commands\WorkermanServer->{closure:App\Commands\WorkermanServer::run():56}(Object(Workerman\Connection\TcpConnection), '{"type":"auth",...')
+#5 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Events/Select.php(406): Workerman\Connection\TcpConnection->baseRead(Resource id #239)
+#6 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1758): Workerman\Events\Select->run()
+#7 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1554): Workerman\Worker::forkOneWorkerForLinux(Object(Workerman\Worker))
+#8 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(1534): Workerman\Worker::forkWorkersForLinux()
+#9 /data/data/com.termux/files/home/memosd-backend/vendor/workerman/workerman/src/Worker.php(603): Workerman\Worker::forkWorkers()
+#10 /data/data/com.termux/files/home/memosd-backend/app/Commands/WorkermanServer.php(110): Workerman\Worker::runAll()
+#11 /data/data/com.termux/files/home/memosd-backend/system/CLI/Commands.php(74): App\Commands\WorkermanServer->run(Array)
+#12 /data/data/com.termux/files/home/memosd-backend/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('workerman:serve', Array)
+#13 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#14 /data/data/com.termux/files/home/memosd-backend/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 /data/data/com.termux/files/home/memosd-backend/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+2026-04-15 09:24:17 pid:23499 worker[MemoSD WebSocket:23500] exit with status 64000
+2026-04-15 09:27:05 pid:23499 Workerman[spark] received signal SIGINT
+2026-04-15 09:27:05 pid:23499 Workerman[spark] stopping
+2026-04-15 09:27:05 pid:23499 Workerman[spark] has been stopped
+2026-04-15 09:27:25 pid:3707 Workerman[spark] stop
+2026-04-15 09:27:25 pid:3707 Workerman[spark] not run
+2026-04-15 09:27:27 pid:3711 Workerman[spark] start in DEBUG mode
+2026-04-15 09:52:04 pid:3711 Workerman[spark] received signal SIGINT
+2026-04-15 09:52:04 pid:3711 Workerman[spark] stopping
+2026-04-15 09:52:04 pid:3711 Workerman[spark] has been stopped

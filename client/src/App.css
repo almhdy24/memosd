@@ -1,0 +1,214 @@
+/* Mobile sidebar transitions */
+@media (max-width: 991.98px) {
+  .sidebar-collapsed {
+    transform: translateX(-100%);
+  }
+}
+
+/* Ensure sidebar is visible on desktop */
+@media (min-width: 992px) {
+  .position-lg-static {
+    position: static !important;
+  }
+  .d-lg-block {
+    display: block !important;
+  }
+  .d-lg-none {
+    display: none !important;
+  }
+}
+
+/* Better touch targets */
+.btn, .nav-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.form-control, .form-select {
+  min-height: 44px;
+}
+
+/* Card spacing */
+.card {
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Chat layout fix */
+.chat-container {
+  height: calc(100vh - 120px);
+}
+
+
+/* Mobile optimizations */
+@media (max-width: 767.98px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  .card-body { padding: 1rem; }
+  .btn { padding: 0.6rem 1rem; font-size: 1rem; }
+  .form-control, .form-select { font-size: 16px; } /* prevents zoom on iOS */
+}
+
+/* Pull-to-refresh hint */
+.pull-indicator {
+  text-align: center;
+  color: #6c757d;
+  padding: 8px;
+  font-size: 0.875rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Active states for touch */
+.btn:active, .nav-link:active {
+  opacity: 0.7;
+}
+
+/* Bottom nav active indicator */
+.nav-link.active {
+  position: relative;
+}
+
+/* Floating Action Button hover effect */
+.btn-floating {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-floating:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Ensure bottom nav doesn't overlap content */
+.pb-bottom-nav {
+  padding-bottom: 70px;
+}
+
+
+/* Space for bottom navigation on mobile */
+@media (max-width: 991.98px) {
+  main {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Note card dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  z-index: 1050;
+  min-width: 140px;
+}
+
+/* Facebook-like card hover */
+.card {
+  transition: box-shadow 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* Sticky section headers */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Smooth transitions for interactive elements */
+.btn, .nav-link, .dropdown-item, .list-group-item {
+  transition: all 0.15s ease;
+}
+
+/* Improved focus states for accessibility */
+.btn:focus-visible, .nav-link:focus-visible, .form-control:focus-visible {
+  outline: 2px solid #2A6F97;
+  outline-offset: 2px;
+}
+
+/* Consistent avatar border in cards */
+.avatar-border {
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Pull‑to‑refresh animation (simple) */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.pull-indicator i {
+  animation: spin 0.8s linear infinite;
+}
+
+/* FAB spacing adjustment for bottom nav */
+@media (max-width: 991.98px) {
+  .fab-spacer {
+    height: 20px;
+  }
+}
+
+/* Smooth transitions for interactive elements */
+a, button, .btn, .nav-link, .card {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+.btn:focus, .nav-link:focus, input:focus, textarea:focus, select:focus {
+  outline: 2px solid #2A6F97;
+  outline-offset: 2px;
+}
+
+/* Card hover effect */
+.card.shadow-sm:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Empty state styling */
+.empty-state {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+/* Skeleton loading animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* Pull-to-refresh indicator (mobile) */
+.pull-to-refresh {
+  text-align: center;
+  padding: 12px;
+  color: #2A6F97;
+  font-size: 0.875rem;
+}
+
+/* Better mobile tap targets */
+@media (max-width: 767.98px) {
+  .dropdown-item, .list-group-item {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+}
+.spin { animation: spin 1s linear infinite; } @keyframes spin { 100% { transform: rotate(360deg); } }

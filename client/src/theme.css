@@ -1,0 +1,97 @@
+/* Nile Calm Theme - MemoSD */
+
+:root {
+  /* Primary - Nile Blue */
+  --bs-primary: #2A6F97;
+  --bs-primary-rgb: 42, 111, 151;
+  
+  /* Secondary - Soft Green */
+  --bs-secondary: #6BAA75;
+  --bs-secondary-rgb: 107, 170, 117;
+  
+  /* Success - Keep fresh green */
+  --bs-success: #4CAF50;
+  --bs-success-rgb: 76, 175, 80;
+  
+  /* Background */
+  --bs-body-bg: #F8F9FA;
+  
+  /* Card background */
+  --bs-card-bg: #FFFFFF;
+  
+  /* Border color */
+  --bs-border-color: #DEE2E6;
+  
+  /* Text colors */
+  --bs-body-color: #212529;
+  --bs-secondary-color: #6C757D;
+}
+
+/* Navbar - override background if using bg-primary */
+.navbar.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+/* Buttons - softer hover states */
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #1F5A7A;
+  --bs-btn-hover-border-color: #1F5A7A;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary);
+}
+
+/* Secondary button (custom) */
+.btn-secondary {
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: #5A9463;
+  --bs-btn-hover-border-color: #5A9463;
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: var(--bs-secondary);
+  --bs-btn-hover-border-color: var(--bs-secondary);
+}
+
+/* Tags - Soft green background */
+.badge.bg-secondary {
+  background-color: rgba(107, 170, 117, 0.15) !important;
+  color: #2D6A4F !important;
+  font-weight: 500;
+}
+
+/* Cards - subtle shadow and border */
+.card {
+  border: 1px solid var(--bs-border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+/* Sidebar active link */
+.nav-pills .nav-link.active {
+  background-color: var(--bs-primary);
+}
+
+/* Links */
+a {
+  color: var(--bs-primary);
+}
+
+a:hover {
+  color: #1F5A7A;
+}
+
+/* Form focus */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(42, 111, 151, 0.25);
+}
